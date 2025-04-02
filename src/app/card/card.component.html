@@ -1,0 +1,30 @@
+
+<section class="grid-container">
+    <div *ngIf="isInputCard" class="grid-item input-card">
+        <button class="plus-button icon-btn add-btn" id="add-icon" (click)="openModal()">+</button>    
+    </div>
+
+    <div *ngIf="!isInputCard" class="grid-item card">
+        <button class="remove-btn" (click)="removeCard()">
+            <span class="material-icons">delete</span>
+        </button>
+
+        <div class="card-content">
+            <div class="icon">{{ card?.Name }}</div>
+            <div class="sub-text">{{ card?.Subtext }}</div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+  

@@ -1,0 +1,24 @@
+<form [formGroup]="loginForm" (ngSubmit)="submitForm()" >
+  <img src="cymiq.jpg" alt="cymonix iq">
+  <h2>Sign In</h2>
+  <h3>Welcome Back!</h3>
+  <div class="email">
+    <label for="email">Email Address: </label>
+    <input type="email"  formControlName ="email">
+    <div class="error" *ngIf="email?.invalid && email?.touched">
+      {{ email?.errors?.['required'] ? 'Email Address is required' : 'Invalid email format (missing @ or domain)' }}
+    </div>
+  </div>
+  <div class="password">
+    <label for="password">Password: </label>
+    <input type="password"  formControlName ="password">
+    <div class="error" *ngIf="password?.invalid && password?.touched">
+      {{ password?.errors?.['required'] ? 'Password is required' : 'Password must be at least 6 characters' }}
+    </div>
+  </div>
+  <button type="submit" (click)="signIn()">Sign In</button> 
+  <p class="submitted">{{submitMessage}}</p>
+
+</form>
+
+

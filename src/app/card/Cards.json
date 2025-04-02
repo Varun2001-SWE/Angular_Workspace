@@ -1,0 +1,98 @@
+[
+  {
+    "name": "SE",
+    "subtext": "Software Engineer"
+  },
+  {
+    "name": "DA",
+    "subtext": "Data Analyst"
+  },
+  {
+    "name": "PM",
+    "subtext": "Product Manager"
+  },
+  {
+    "name": "UD",
+    "subtext": "UX Designer"
+  },
+  {
+    "name": "MT",
+    "subtext": "Marketing Specialist"
+  },
+  {
+    "name": "CT",
+    "subtext": "Cybersecurity Expert"
+  },
+  {
+    "name": "DE",
+    "subtext": "DevOps Engineer"
+  },
+  {
+    "name": "CT",
+    "subtext": "Cloud Architect"
+  },
+  {
+    "name": "AR",
+    "subtext": "AI Researcher"
+  },
+  {
+    "name": "MD",
+    "subtext": "Mobile Developer"
+  },
+  {
+    "name": "BD",
+    "subtext": "Blockchain Developer"
+  },
+  {
+    "name": "FA",
+    "subtext": "Financial Analyst"
+  },
+  {
+    "name": "HS",
+    "subtext": "Human Resources Manager"
+  },
+  {
+    "name": "SE",
+    "subtext": "Sales Executive"
+  },
+  {
+    "name": "GD",
+    "subtext": "Game Developer"
+  },
+  {
+    "name": "ME",
+    "subtext": "Mechanical Engineer"
+  },
+  {
+    "name": "CE",
+    "subtext": "Civil Engineer"
+  },
+  {
+    "name": "NA",
+    "subtext": "Network Administrator"
+  },
+  {
+    "name": "GD",
+    "subtext": "Graphic Designer"
+  },
+  {
+    "name": "DM",
+    "subtext": "Digital Marketer"
+  },
+  {
+    "name": "BC",
+    "subtext": "Business Consultant"
+  },
+  {
+    "name": "ES",
+    "subtext": "E-commerce Specialist"
+  },
+  {
+    "name": "CW",
+    "subtext": "Content Writer"
+  },
+  {
+    "name": "SS",
+    "subtext": "SEO Strategist"
+  }
+]

@@ -1,0 +1,84 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CardComponent } from '../card/card.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+
+export interface Card {
+  Name: string;
+  Subtext: string;
+}
+
+@Component({
+  selector: 'app-workbench',
+  standalone: true,
+  imports: [CommonModule, CardComponent, FormsModule, ReactiveFormsModule],
+  templateUrl: './workbench.component.html',
+  styleUrl: './workbench.component.css'
+})
+export class WorkbenchComponent {
+  
+  cards: Card[] = [];
+  filteredCards: Card[] = [];
+  isModalOpen: boolean = false;
+  cardForm: FormGroup;
+  searchQuery: string = '';
+  sortOrder: 'asc' | 'desc' = 'asc';
+
+  constructor(
+    private route: ActivatedRoute,
+    private fb: FormBuilder
+  ) {
+    this.cardForm = this.fb.group({
+      Name: ['', [Validators.required, Validators.minLength(3)]],
+      Subtext: ['', Validators.required]
+    });
+  }
+
+  ngOnInit() {
+    this.cards = this.route.snapshot.data['cards'] || [];
+    this.filteredCards = [...this.cards]; 
+  }
+
+  toggleModal(state: boolean) {
+    this.isModalOpen = state;
+    if (!state) {
+      this.cardForm.reset();
+    }
+  }
+
+  createCard() {
+    if (this.cardForm.valid) {
+      this.cards.push(this.cardForm.value);
+      this.filterCards(); 
+      this.toggleModal(false);
+    }
+  }
+
+  removeCard(index: number) {
+    this.cards.splice(index, 1);
+    this.filterCards(); 
+  }
+
+  filterCards() {
+    const query = this.searchQuery.toLowerCase();
+    this.filteredCards = this.cards.filter(card =>
+      card.Name.toLowerCase().includes(query) ||
+      card.Subtext.toLowerCase().includes(query)
+    );
+  }
+
+  sortCards(order: 'asc' | 'desc') {
+    this.sortOrder = order;
+    this.filteredCards.sort((a, b) => {
+      return order === 'asc' 
+        ? a.Name.localeCompare(b.Name) 
+        : b.Name.localeCompare(a.Name);
+    });
+  }
+}
+
+
