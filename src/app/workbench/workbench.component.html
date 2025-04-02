@@ -2,7 +2,7 @@
 <div id="body">
     <div class="header">My Workbench</div>
 <div class="search_zone">
-    
+    <!-- Search Bar -->
     <div class="group">
         <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
             <g>
@@ -18,7 +18,7 @@
             (input)="filterCards()" />
     </div>
 
-    
+    <!-- Sorting Button - Ascend or Descend -->
     <div class="sort-buttons">
         <button (click)="sortCards('asc')" class="sort-button">Sort A-Z</button>
         <button (click)="sortCards('desc')" class="sort-button">Sort Z-A</button>
@@ -26,7 +26,7 @@
 </div>
     
     
-    
+    <!-- Cards from API Call -->
     <div class="grid-container">
         <app-card 
             [isInputCard]="true" 
@@ -41,7 +41,7 @@
     </div>
 </div>
 
-
+<!-- Modal Overlay -->
 <div class="modal-overlay" *ngIf="isModalOpen">
     <section class="workbench_form">
         <div class="modal_header">Create Workbench</div>
