@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from '../card/card.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
@@ -30,7 +30,8 @@ export class WorkbenchComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) {
     this.cardForm = this.fb.group({
       Name: ['', [Validators.required, Validators.minLength(3)]],
@@ -78,6 +79,10 @@ export class WorkbenchComponent {
         ? a.Name.localeCompare(b.Name) 
         : b.Name.localeCompare(a.Name);
     });
+  }
+
+  toModelPage() {
+    this.router.navigate(['/model']);
   }
 }
 

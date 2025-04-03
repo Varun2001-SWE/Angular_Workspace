@@ -1,0 +1,14 @@
+* {
+    background-color: bisque;
+}
+
+.badge {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+  
+  .btn-group .btn {
+    margin-right: 5px;
+  }
+  

@@ -22,10 +22,12 @@ import { AppComponent } from './app/app.component';
 import { LoginComponent } from './app/auth/login/login.component';
 import { WorkbenchComponent } from './app/workbench/workbench.component';
 import { WorkbenchResolver } from './app/workbench/workbench.resolver';
+import { ModelComponent } from './app/model/model.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'workbench', component: WorkbenchComponent, resolve: { cards: WorkbenchResolver } }
+  { path: 'workbench', component: WorkbenchComponent, resolve: { cards: WorkbenchResolver } },
+  { path: 'model', component: ModelComponent }
 ];
 
 bootstrapApplication(AppComponent, {
