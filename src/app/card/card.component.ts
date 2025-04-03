@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class CardComponent { 
 
+  // Added Inputs and Outputs for card to communicate with workbench Component
+
   @Input() isInputCard: boolean = false;
   @Input() card: { Name: string; Subtext: string } | undefined;
   @Output() openModalEvent = new EventEmitter<void>();
