@@ -24,6 +24,9 @@ import { WorkbenchComponent } from './app/workbench/workbench.component';
 import { WorkbenchResolver } from './app/workbench/workbench.resolver';
 import { ModelComponent } from './app/model/model.component';
 
+// Check for PrimeNg in Angular 18
+
+
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'workbench', component: WorkbenchComponent, resolve: { cards: WorkbenchResolver } },
