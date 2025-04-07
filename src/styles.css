@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Lato:wght@400;700&display=swap");
 
+
+
 * {
   box-sizing: border-box;
   background-color: #fff;
 }
 
 body {
-  /* background-color: #e7eaf6; */
+  /* background-color: pink; */
 }
 
 /* body {

@@ -1,45 +1,29 @@
-<!-- Page for Table -->
+<div class="filter-buttons">
+  <button (click)="filterByStatus('all')">All</button>
+  <button (click)="filterByStatus('error')">Error</button>
+  <button (click)="filterByStatus('in-progress')">In-progress</button>
+  <button (click)="filterByStatus('complete')">Complete</button>
+</div>
 
-<p-button label="Click Me"></p-button>
-
-<div class="container mt-3">
-    <h2>Data Records</h2>
-  
-    <!-- Filters -->
-    <div class="btn-group mb-3">
-      <button class="btn btn-primary" >All</button>
-      <button class="btn btn-success" >Active</button>
-      <button class="btn btn-warning" >Pending</button>
-      <button class="btn btn-danger" >Error</button>
-    </div>
-  
-    <!-- Table -->
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Title</th>
-          <th>Category</th>
-          <th>Created By</th>
-          <th>Created On</th>
-          <th>Status</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr >
-          <td>id </td>
-          <td>title </td>
-          <td>category </td>
-          <td>createdBy </td>
-          <td>createdOn </td>
-          
-          <td>
-            <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Created By</th>
+      <th>Description</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let model of filteredModels">
+      <td>{{ model.name }}</td>
+      <td>{{ model.createdBy }}</td>
+      <td>{{ model.description }}</td>
+      <td>
+        <span [ngClass]="getStatusClass(model.status)">
+          {{ model.status }}
+        </span>
+      </td>      
+    </tr>
+  </tbody>
+</table>

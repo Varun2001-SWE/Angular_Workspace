@@ -4,11 +4,10 @@ import { FormsModule } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-card',
-  standalone: true,
-  imports: [CommonModule,FormsModule],
-  templateUrl: './card.component.html',
-  styleUrl: './card.component.css'
+    selector: 'app-card',
+    imports: [CommonModule, FormsModule],
+    templateUrl: './card.component.html',
+    styleUrl: './card.component.css'
 })
 export class CardComponent { 
 

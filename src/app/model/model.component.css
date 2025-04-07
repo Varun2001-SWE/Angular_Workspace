@@ -1,14 +1,77 @@
-* {
-    background-color: bisque;
+/* Model CSS – Enhanced Style */
+
+.filter-buttons {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
 }
 
-.badge {
-    padding: 8px;
-    font-size: 14px;
-    border-radius: 12px;
-  }
-  
-  .btn-group .btn {
-    margin-right: 5px;
-  }
-  
+button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #f6c391;
+  color: #333;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #f4b06f;
+  transform: translateY(-2px);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  /* width: 800px; */
+  border: 2px solid black;
+  margin-left: auto;
+}
+
+th {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+td {
+  padding: 0.5rem;
+  background: #ece8d9;;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.status-badge {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: inline-block;
+  font-size: 0.85rem;
+}
+
+.status-badge.error {
+  background-color: #e74c3c;
+}
+
+.status-badge.in-progress {
+  background-color: #f1c40f;
+  color: #000;
+}
+
+.status-badge.complete {
+  background-color: #2ecc71;
+}

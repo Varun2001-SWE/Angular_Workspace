@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { ButtonModule } from 'primeng/button';
 
 export interface Card {
   Name: string;
@@ -13,11 +13,10 @@ export interface Card {
 }
 
 @Component({
-  selector: 'app-workbench',
-  standalone: true,
-  imports: [CommonModule, CardComponent, FormsModule, ReactiveFormsModule],
-  templateUrl: './workbench.component.html',
-  styleUrl: './workbench.component.css'
+    selector: 'app-workbench',
+    imports: [CommonModule, CardComponent, FormsModule, ReactiveFormsModule,ButtonModule],
+    templateUrl: './workbench.component.html',
+    styleUrl: './workbench.component.css'
 })
 export class WorkbenchComponent {
   

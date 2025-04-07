@@ -6,10 +6,9 @@ import { RouterModule } from '@angular/router';
 
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  templateUrl: './app.component.html',
-  imports: [LoginComponent,WorkbenchComponent,RouterModule,CardComponent], 
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    imports: [RouterModule]
 })
 export class AppComponent {
   

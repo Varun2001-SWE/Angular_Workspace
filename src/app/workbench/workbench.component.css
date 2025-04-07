@@ -405,3 +405,10 @@ background-color: #ccc;
   border-radius: 10px;
   background-color: lavenderblush;
 }
+
+.page_button {
+  padding: 10px;
+  border-radius: 10px;
+  background: #c4c1e0; 
+  margin-top: 9px;
+}

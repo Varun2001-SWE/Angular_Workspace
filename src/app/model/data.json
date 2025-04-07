@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "name": "Forecast AI",
+    "createdBy": "Alice",
+    "description": "Predicts market trends using ML",
+    "status": "complete"
+  },
+  {
+    "id": 2,
+    "name": "VisionNet",
+    "createdBy": "Bob",
+    "description": "Object detection model for drones",
+    "status": "in-progress"
+  },
+  {
+    "id": 3,
+    "name": "HealthCheck",
+    "createdBy": "Charlie",
+    "description": "Predicts patient readmission risk",
+    "status": "error"
+  },
+  {
+    "id": 4,
+    "name": "AutoPilot",
+    "createdBy": "Diana",
+    "description": "Self-driving car control system",
+    "status": "complete"
+  },
+  {
+    "id": 5,
+    "name": "Speechify",
+    "createdBy": "Ethan",
+    "description": "Real-time speech-to-text converter",
+    "status": "in-progress"
+  },
+  {
+    "id": 6,
+    "name": "AgroSense",
+    "createdBy": "Fiona",
+    "description": "Crop disease detection tool",
+    "status": "error"
+  },
+  {
+    "id": 7,
+    "name": "RetailRadar",
+    "createdBy": "George",
+    "description": "Customer behavior analytics for retail",
+    "status": "complete"
+  },
+  {
+    "id": 8,
+    "name": "DocuBot",
+    "createdBy": "Hannah",
+    "description": "Legal document summarizer",
+    "status": "in-progress"
+  },
+  {
+    "id": 9,
+    "name": "Translatica",
+    "createdBy": "Ian",
+    "description": "Language translation assistant",
+    "status": "error"
+  },
+  {
+    "id": 10,
+    "name": "EnergySmart",
+    "createdBy": "Julia",
+    "description": "Energy consumption optimizer",
+    "status": "complete"
+  },
+  {
+    "id": 11,
+    "name": "SafePath",
+    "createdBy": "Kevin",
+    "description": "Pathfinding for emergency response",
+    "status": "in-progress"
+  },
+  {
+    "id": 12,
+    "name": "FoodTrack",
+    "createdBy": "Liam",
+    "description": "Tracks food expiry and waste",
+    "status": "error"
+  },
+  {
+    "id": 13,
+    "name": "HomeGuard",
+    "createdBy": "Maya",
+    "description": "AI home security monitor",
+    "status": "complete"
+  },
+  {
+    "id": 14,
+    "name": "CodeNinja",
+    "createdBy": "Nora",
+    "description": "Bug detection in codebases",
+    "status": "in-progress"
+  },
+  {
+    "id": 15,
+    "name": "WellnessAI",
+    "createdBy": "Oscar",
+    "description": "Monitors fitness and wellness data",
+    "status": "complete"
+  }
+]

@@ -1,13 +1,36 @@
-import { Component } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
+import { CommonModule } from '@angular/common';
+import { Component} from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import data from './data.json';
+
 
 @Component({
   selector: 'app-model',
   standalone: true,
-  imports: [ButtonModule],
   templateUrl: './model.component.html',
-  styleUrl: './model.component.css'
+  styleUrl: './model.component.css',
+  imports: [FormsModule,CommonModule]
 })
 export class ModelComponent {
+  models= data;
+  filteredModels = data;
 
+  filterByStatus(status: string) {
+    this.filteredModels =
+      status === 'all' ? this.models : this.models.filter(model => model.status === status);
+  }
+
+  getStatusClass(status: string): string {
+    switch (status.toLowerCase()) {
+      case 'error':
+        return 'status-badge error';
+      case 'in-progress':
+        return 'status-badge in-progress';
+      case 'complete':
+        return 'status-badge complete';
+      default:
+        return 'status-badge';
+    }
+  }
+  
 }
