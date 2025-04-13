@@ -6,7 +6,7 @@ import { map, catchError } from 'rxjs/operators';
 
 export interface Card {
   Name: string;
-  Subtext: string;
+  Subtext: Number;
 }
 
 @Injectable({

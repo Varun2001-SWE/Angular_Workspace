@@ -7,9 +7,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 
+
 export interface Card {
   Name: string;
-  Subtext: string;
+  Subtext: number;
 }
 
 @Component({
@@ -66,8 +67,8 @@ export class WorkbenchComponent {
   filterCards() {
     const query = this.searchQuery.toLowerCase();
     this.filteredCards = this.cards.filter(card =>
-      card.Name.toLowerCase().includes(query) ||
-      card.Subtext.toLowerCase().includes(query)
+      card.Name.toLowerCase().includes(query) 
+      // card.Subtext.toLowerCase().includes(query)
     );
   }
 
