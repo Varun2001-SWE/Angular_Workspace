@@ -9,7 +9,7 @@
             <span class="material-icons">delete</span>
         </button>
 
-        <div class="card-content">
+        <div class="card-content" (click)="toModelPage()">
             <div class="icon">{{ card?.Name }}</div>
             <div class="sub-text">{{ card?.Subtext | divideByHundred }}</div>
         </div>

@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DivideByHundredPipe } from '../divide-by-hundred.pipe';
-
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-card',
@@ -25,6 +25,12 @@ export class CardComponent {
 
   removeCard() {
     this.removeCardEvent.emit();
+  }
+
+  constructor(private router: Router) {}
+
+  toModelPage() {
+    this.router.navigate(['/model']);
   }
   
 }

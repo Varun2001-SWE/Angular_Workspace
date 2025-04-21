@@ -1,9 +1,14 @@
+<div class="go-back">
+  <a (click)="revert()"><i class="pi pi-angle-left" style="font-size: 1.5rem"></i></a>
+</div>
+
 <div class="filter-buttons">
   <button (click)="filterByStatus('all')">All</button>
   <button (click)="filterByStatus('error')">Error</button>
   <button (click)="filterByStatus('in-progress')">In-progress</button>
   <button (click)="filterByStatus('complete')">Complete</button>
 </div>
+
 
 <table>
   <thead>

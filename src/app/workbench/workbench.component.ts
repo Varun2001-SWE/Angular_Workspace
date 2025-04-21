@@ -39,9 +39,22 @@ export class WorkbenchComponent {
     });
   }
 
+  savedCards() {
+    localStorage.setItem('cards', JSON.stringify(this.cards));
+  }
+
+  loadCards() {
+    const saved = localStorage.getItem('cards');
+    if(saved) {
+      this.cards = JSON.parse(saved);
+      this.filteredCards = [...this.cards];
+    }
+  }
+
   ngOnInit() {
     this.cards = this.route.snapshot.data['cards'] || [];
-    this.filteredCards = [...this.cards]; 
+    this.filteredCards = [...this.cards];
+    this.loadCards();
   }
 
   toggleModal(state: boolean) {
@@ -51,9 +64,12 @@ export class WorkbenchComponent {
     }
   }
 
+  
+
   createCard() {
     if (this.cardForm.valid) {
       this.cards.push(this.cardForm.value);
+      this.savedCards();
       this.filterCards(); 
       this.toggleModal(false);
     }

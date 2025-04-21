@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component} from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import data from './data.json';
 
 
@@ -31,6 +32,12 @@ export class ModelComponent {
       default:
         return 'status-badge';
     }
+  }
+
+  constructor(private router: Router) {}
+
+  revert() {
+    this.router.navigate(['/workbench']);
   }
   
 }
