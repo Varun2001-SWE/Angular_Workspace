@@ -9,8 +9,12 @@
   <button (click)="filterByStatus('complete')">Complete</button>
 </div>
 
+<app-reusable-table 
+  [data]="filteredModels" 
+  [columns]="columns">
+</app-reusable-table>
 
-<table>
+<!-- <table>
   <thead>
     <tr>
       <th>Name</th>
@@ -31,4 +35,4 @@
       </td>      
     </tr>
   </tbody>
-</table>
+</table> -->
