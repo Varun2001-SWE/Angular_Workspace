@@ -29,18 +29,6 @@ export class ModelComponent {
       status === 'all' ? this.models : this.models.filter(model => model.status === status);
   }
 
-  // getStatusClass(status: string): string {
-  //   switch (status.toLowerCase()) {
-  //     case 'error':
-  //       return 'status-badge error';
-  //     case 'in-progress':
-  //       return 'status-badge in-progress';
-  //     case 'complete':
-  //       return 'status-badge complete';
-  //     default:
-  //       return 'status-badge';
-  //   }
-  // }
 
   constructor(private router: Router) {}
 
