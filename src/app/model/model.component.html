@@ -9,26 +9,9 @@
   <button (click)="filterByStatus('complete')">Complete</button>
 </div>
 
+<app-reusable-table 
+  [data]="filteredModels" 
+  [columns]="columns">
+</app-reusable-table>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Created By</th>
-      <th>Description</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let model of filteredModels">
-      <td>{{ model.name }}</td>
-      <td>{{ model.createdBy }}</td>
-      <td>{{ model.description }}</td>
-      <td>
-        <span [ngClass]="getStatusClass(model.status)">
-          {{ model.status }}
-        </span>
-      </td>      
-    </tr>
-  </tbody>
-</table>
+
