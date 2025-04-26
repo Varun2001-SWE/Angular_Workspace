@@ -100,6 +100,11 @@ export class WorkbenchComponent {
   toModelPage() {
     this.router.navigate(['/model']);
   }
+
+  toLogout() {
+    this.router.navigate(['/']);
+  }
 }
+
 
 

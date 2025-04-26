@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component} from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import data from './data.json';
@@ -11,12 +11,14 @@ import { ReusableTableComponent } from '../reusable-table/reusable-table.compone
   standalone: true,
   templateUrl: './model.component.html',
   styleUrl: './model.component.css',
-  imports: [FormsModule,CommonModule, ReusableTableComponent]
+  imports: [FormsModule,CommonModule,ReusableTableComponent]
 })
 export class ModelComponent {
   models= data;
   filteredModels = data;
-
+  
+  inputName: string = '';
+  
   columns = [
     { header: 'Name', field: 'name' },
     { header: 'Created By', field: 'createdBy' },
@@ -34,6 +36,10 @@ export class ModelComponent {
 
   revert() {
     this.router.navigate(['/workbench']);
+  }
+
+  onInputChange(name: string) {
+    this.inputName = name;
   }
   
 }
