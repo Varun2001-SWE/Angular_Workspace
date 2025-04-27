@@ -1,16 +1,21 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {ReactiveFormsModule, FormControl,FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-reusable-table',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,ReactiveFormsModule],
   templateUrl: './reusable-table.component.html',
   styleUrl: './reusable-table.component.css'
 })
 export class ReusableTableComponent {
   @Input() data: any[] = [];
   @Input() columns: { header: string, field: string }[] = [];
+
+  exampleForm = new FormGroup({
+  text: new FormControl('')
+});
 
   getStatusClass(status: string): string {
     switch ((status || '').toLowerCase()) {

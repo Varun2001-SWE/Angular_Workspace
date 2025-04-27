@@ -1,3 +1,10 @@
+<form [formGroup]="exampleForm">
+  <input type="text" formControlName="text">
+</form>
+
+<p>{{exampleForm.value.text}}</p>
+
+
 <table>
     <thead>
       <tr>
@@ -17,4 +24,3 @@
       </tr>
     </tbody>
   </table>
-  
