@@ -1,21 +1,23 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {ReactiveFormsModule, FormControl,FormGroup} from "@angular/forms";
+import { FormControl, FormControlName, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModelComponent } from '../model/model.component';
+import {ExampleComponent} from "../example/example.component";
+
 
 @Component({
   selector: 'app-reusable-table',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './reusable-table.component.html',
   styleUrl: './reusable-table.component.css'
 })
 export class ReusableTableComponent {
   @Input() data: any[] = [];
   @Input() columns: { header: string, field: string }[] = [];
+  @Output() reset = new EventEmitter<void>();
+  selectedRow:any = null;
 
-  exampleForm = new FormGroup({
-  text: new FormControl('')
-});
 
   getStatusClass(status: string): string {
     switch ((status || '').toLowerCase()) {
@@ -29,4 +31,14 @@ export class ReusableTableComponent {
         return '';
     }
   }
+
+  selectRow(row:any) {
+    this.selectedRow = row;
+  }
+
+  resetSelection(){
+    this.selectedRow = null;
+    this.reset.emit();
+  }
+
 }

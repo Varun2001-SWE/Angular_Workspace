@@ -1,3 +1,10 @@
+<header class="header-container">
+  <p class="greet">Welcome, {{email}}</p>
+  <div class="logout-parent">
+    <div class="logout"><button (click)="toLogout()">Logout</button></div>
+  </div>
+</header>
+
 <div id="body">
     <div class="header">My Workbench</div>
 <div class="search_zone">
@@ -8,12 +15,12 @@
                 <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
             </g>
         </svg>
-        <input 
-            id="query" 
-            class="input" 
-            type="search" 
-            placeholder="Search..." 
-            [(ngModel)]="searchQuery" 
+        <input
+            id="query"
+            class="input"
+            type="search"
+            placeholder="Search..."
+            [(ngModel)]="searchQuery"
             (input)="filterCards()" />
     </div>
 
@@ -27,20 +34,20 @@
     <div class="model_page">
         <button (click)="toModelPage()" class="page_button">New Page</button>
      </div>
-     
+
 </div>
 
-    
+
     <!-- Cards from API Call -->
     <div class="grid-container">
-        <app-card 
-            [isInputCard]="true" 
+        <app-card
+            [isInputCard]="true"
             (openModalEvent)="toggleModal(true)">
         </app-card>
 
-        <app-card 
-            *ngFor="let card of filteredCards; let i = index" 
-            [card]="card" 
+        <app-card
+            *ngFor="let card of filteredCards; let i = index"
+            [card]="card"
             (removeCardEvent)="removeCard(i)">
         </app-card>
     </div>
@@ -57,7 +64,7 @@
                 <div *ngIf="cardForm.get('Name')?.invalid && cardForm.get('Name')?.touched" class="error">
                     Name is required (min. 3 characters)
                 </div>
-                
+
                 <label for="description">Description:</label>
                 <textarea id="desc" formControlName="Subtext"></textarea>
                 <div *ngIf="cardForm.get('Subtext')?.invalid && cardForm.get('Subtext')?.touched" class="error">

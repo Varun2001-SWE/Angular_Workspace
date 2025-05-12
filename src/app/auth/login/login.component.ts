@@ -3,6 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { AuthService} from "../../auth.service";
 
 @Component({
     selector: 'app-login',
@@ -16,6 +17,7 @@ export class LoginComponent {
     password: new FormControl('', [Validators.required, Validators.minLength(6)])
   });
 
+  errorMessage :string = '';
   submitMessage = 'Form To Be Validated';
 
   get email() {
@@ -32,10 +34,21 @@ export class LoginComponent {
     this.loginForm.valid ? this.submitMessage = "Form Valid" : this.submitMessage = "Form Invalid";
   }
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   signIn() {
     this.router.navigate(['/workbench']);
+    const email = this.loginForm.get('email')?.value || '';
+    const password = this.loginForm.get('password')?.value || '';
+
+    console.log("checking if the email is working", email);
+
+    if(this.authService.authenticate(email, password)) {
+      this.authService.setEmail(email);
+
+    } else {
+      this.errorMessage = 'Invalid email or password';
+    }
   }
 
 

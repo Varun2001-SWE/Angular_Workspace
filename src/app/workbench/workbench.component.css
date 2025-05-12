@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     /* outline: 2px solid aqua; */
-    
+
 }
 
 body {
@@ -26,14 +26,14 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); 
-    gap: 0.5rem; 
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
     width: 100%;
 }
 
 .grid-item {
     text-align: center;
-    background: white; 
+    background: white;
     height: 200px;
     width: 250px;
     margin: 10px;
@@ -49,13 +49,13 @@ body {
     border-radius: 10px;
     align-items: center;
     align-self: center;
-    padding: 3px;
+    padding: 10px;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 5px;
     font-weight: 800;
-    font-size: 24px;  
+    font-size: 24px;
     color: #fff;
 }
 
@@ -67,7 +67,7 @@ body {
 
 .input_zone {
     display: grid;
-    
+
 }
 
 #body {
@@ -95,16 +95,16 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); 
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
   }
-  
+
   /* Modal Container */
-  
-  
+
+
   /* Modal Header */
   .modal_header {
     font-size: 22px;
@@ -117,7 +117,7 @@ body {
     padding: 12px;
     text-align: left;
   }
-  
+
   /* Input Zone */
   .input_zone {
     width: 100%;
@@ -126,14 +126,14 @@ body {
     gap: 12px;
     background-color: #fff;
   }
-  
+
   .input_zone label {
     font-weight: 500;
     color: black;
     font-size: 14px;
     background-color: #fff;
   }
-  
+
   .input_zone input,
   .input_zone textarea {
     width: 100%;
@@ -143,14 +143,14 @@ body {
     font-size: 14px;
     transition: 0.3s;
   }
-  
+
   .input_zone input:focus,
   .input_zone textarea:focus {
     outline: none;
     border-color: #79c2d0;
     box-shadow: 0 0 5px rgba(121, 194, 208, 0.5);
   }
-  
+
   /* Button Zone */
   .button_zone {
     display: flex;
@@ -159,7 +159,7 @@ body {
     margin-top: 60px;
     background-color: #fff;
   }
-  
+
   .button_zone button {
     width: 48%;
     padding: 10px;
@@ -169,27 +169,27 @@ body {
     cursor: pointer;
     transition: 0.3s;
   }
-  
+
   .cancel {
     background: #f8f9fa;
     border: 1px solid #ccc;
     color: #333;
   }
-  
+
   .cancel:hover {
     background: #e0e0e0;
   }
-  
+
   .create {
     background: #79c2d0;
     border: none;
     color: white;
   }
-  
+
   .create:hover {
     background: #5aa0b0;
   }
-  
+
   /* Fade In Animation */
   @keyframes fadeIn {
     from {
@@ -201,7 +201,7 @@ body {
       opacity: 1;
     }
   }
-  
+
 /* test css11 */
 
 
@@ -226,10 +226,10 @@ body {
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
+  align-items: flex-start;
   animation: fadeIn 0.3s ease-in-out;
   height: 400px;
-  position: relative; 
+  position: relative;
   background-color: white;
 }
 
@@ -247,7 +247,7 @@ body {
 
 
 .input_zone {
-  width: 100%;  
+  width: 100%;
   width: 500px;
   display: flex;
   flex-direction: column;
@@ -409,6 +409,44 @@ background-color: #ccc;
 .page_button {
   padding: 10px;
   border-radius: 10px;
-  background: #c4c1e0; 
+  background: #c4c1e0;
   margin-top: 9px;
+}
+
+
+.header-container {
+  display: flex;
+  align-items: center; /* Vertically centers elements */
+  justify-content: space-between; /* Pushes .greet left, .logout right */
+  width: 100%; /* Full width of parent */
+  padding: 10px; /* Optional: Adds spacing */
+}
+
+.greet {
+  margin: 0; /* Removes default <p> margin */
+  font-size: large;
+  font-weight: bold;
+  color: #333; /* Dark text for readability */
+
+}
+
+.logout-parent {
+  display: flex; /* Ensures .logout aligns properly */
+}
+
+.logout {
+  padding: 5px; /* Optional: Adds spacing */
+}
+
+.logout button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background: #dc3545; /* Red, matches your .remove-btn */
+  color: white;
+  cursor: pointer;
+}
+
+.logout button:hover {
+  background: #b02a37; /* Darker red on hover */
 }

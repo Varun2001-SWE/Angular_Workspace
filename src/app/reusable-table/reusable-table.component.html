@@ -1,10 +1,4 @@
-<form [formGroup]="exampleForm">
-  <input type="text" formControlName="text">
-</form>
-
-<p>{{exampleForm.value.text}}</p>
-
-
+<button class="reset-button" (click)="resetSelection()">Show All Rows</button>
 <table>
     <thead>
       <tr>
@@ -12,7 +6,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let row of data">
+        <tr *ngFor="let row of selectedRow ? [selectedRow] : data" (click)="selectRow(row)">
         <td *ngFor="let col of columns">
           <span *ngIf="col.field === 'status'; else normalCell" [ngClass]="getStatusClass(row[col.field])">
             {{ row[col.field] }}

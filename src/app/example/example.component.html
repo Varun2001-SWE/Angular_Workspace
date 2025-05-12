@@ -1,0 +1,24 @@
+<p>Input field in Example Component</p>
+
+<form [formGroup]="testForm">
+  <input type="text" formControlName="field" placeholder="enter text"   />
+</form>
+
+<p>Input field for Pipe demo</p>
+
+<p *ngIf="this.numberForm.get('number')?.value as num">
+  The number is {{num | double:3}}</p>
+
+<form [formGroup]="numberForm">
+  <input type="number" formControlName="number" placeholder="Please enter a number">
+</form>
+
+<p>-----------------------------------------------------</p>
+<p>Test for impure pipe</p>
+
+<div>
+  <h3>Current Time:</h3>
+  <p>{{ '' | realTime }}</p>
+</div>
+
+

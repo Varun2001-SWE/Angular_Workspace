@@ -1,7 +1,7 @@
 <!-- Card Overlay -->
 <section class="grid-container">
     <div *ngIf="isInputCard" class="grid-item input-card">
-        <button class="plus-button icon-btn add-btn" id="add-icon" (click)="openModal()">+</button>    
+        <button class="plus-button icon-btn add-btn" id="add-icon" (click)="openModal()">+</button>
     </div>
 
     <div *ngIf="!isInputCard" class="grid-item card">
@@ -11,7 +11,7 @@
 
         <div class="card-content" (click)="toModelPage()">
             <div class="icon">{{ card?.Name }}</div>
-            <div class="sub-text">{{ card?.Subtext | divideByHundred }}</div>
+            <div class="sub-text">{{ card?.Subtext | display : 331097593 : 329725481}}</div>
         </div>
     </div>
 </section>
@@ -27,4 +27,3 @@
 
 
 
-  

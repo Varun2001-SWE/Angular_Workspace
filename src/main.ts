@@ -11,10 +11,11 @@ import { ModelComponent } from './app/model/model.component';
 
 
 
+
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'workbench', component: WorkbenchComponent, resolve: { cards: WorkbenchResolver } },
-  { path: 'model', component: ModelComponent }
+  { path: 'model', component: ModelComponent }, 
 ];
 
 bootstrapApplication(AppComponent, {

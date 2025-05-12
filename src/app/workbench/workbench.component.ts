@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
+import { AuthService } from '../auth.service';
 
 
 export interface Card {
@@ -20,7 +21,7 @@ export interface Card {
     styleUrl: './workbench.component.css'
 })
 export class WorkbenchComponent {
-  
+
   cards: Card[] = [];
   filteredCards: Card[] = [];
   isModalOpen: boolean = false;
@@ -31,13 +32,19 @@ export class WorkbenchComponent {
   constructor(
     private route: ActivatedRoute,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService: AuthService,
   ) {
     this.cardForm = this.fb.group({
       Name: ['', [Validators.required, Validators.minLength(3)]],
       Subtext: ['', Validators.required]
     });
   }
+
+  // test code
+  email : string = '';
+
+  //end test
 
   savedCards() {
     localStorage.setItem('cards', JSON.stringify(this.cards));
@@ -55,6 +62,11 @@ export class WorkbenchComponent {
     this.cards = this.route.snapshot.data['cards'] || [];
     this.filteredCards = [...this.cards];
     this.loadCards();
+
+    // this email
+    this.authService.email$.subscribe(email  => {
+      this.email = email;
+    });
   }
 
   toggleModal(state: boolean) {
@@ -64,26 +76,26 @@ export class WorkbenchComponent {
     }
   }
 
-  
+
 
   createCard() {
     if (this.cardForm.valid) {
       this.cards.push(this.cardForm.value);
       this.savedCards();
-      this.filterCards(); 
+      this.filterCards();
       this.toggleModal(false);
     }
   }
 
   removeCard(index: number) {
     this.cards.splice(index, 1);
-    this.filterCards(); 
+    this.filterCards();
   }
 
   filterCards() {
     const query = this.searchQuery.toLowerCase();
     this.filteredCards = this.cards.filter(card =>
-      card.Name.toLowerCase().includes(query) 
+      card.Name.toLowerCase().includes(query)
       // card.Subtext.toLowerCase().includes(query)
     );
   }
@@ -91,8 +103,8 @@ export class WorkbenchComponent {
   sortCards(order: 'asc' | 'desc') {
     this.sortOrder = order;
     this.filteredCards.sort((a, b) => {
-      return order === 'asc' 
-        ? a.Name.localeCompare(b.Name) 
+      return order === 'asc'
+        ? a.Name.localeCompare(b.Name)
         : b.Name.localeCompare(a.Name);
     });
   }
@@ -100,6 +112,11 @@ export class WorkbenchComponent {
   toModelPage() {
     this.router.navigate(['/model']);
   }
+
+  toLogout() {
+    this.router.navigate(['/']);
+  }
 }
+
 
 

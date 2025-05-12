@@ -3,14 +3,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DivideByHundredPipe } from '../divide-by-hundred.pipe';
 import { Router } from '@angular/router';
+import {DisplayPipe} from "../display.pipe";
 
 @Component({
     selector: 'app-card',
-    imports: [CommonModule, FormsModule, DivideByHundredPipe],
+    imports: [CommonModule, FormsModule, DisplayPipe],
     templateUrl: './card.component.html',
     styleUrl: './card.component.css'
 })
-export class CardComponent { 
+export class CardComponent {
 
   // Added Inputs and Outputs for card to communicate with workbench Component
 
@@ -32,5 +33,5 @@ export class CardComponent {
   toModelPage() {
     this.router.navigate(['/model']);
   }
-  
+
 }

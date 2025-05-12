@@ -2,7 +2,9 @@
   <a (click)="revert()"><i class="pi pi-angle-left" style="font-size: 1.5rem"></i></a>
 </div>
 
-<div></div>
+<p>text from example component through reusable table component : {{message}}</p>
+<app-example></app-example>
+
 <div class="filter-buttons">
   <button (click)="filterByStatus('all')">All</button>
   <button (click)="filterByStatus('error')">Error</button>
@@ -12,7 +14,8 @@
 
 <app-reusable-table
   [data]="filteredModels"
-  [columns]="columns">
-</app-reusable-table>
+  [columns]="columns"
+  (reset)="tableReset()"
+></app-reusable-table>
 
 

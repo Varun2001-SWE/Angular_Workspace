@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class DivideByHundredPipe implements PipeTransform {
 
   transform(value: number | undefined): number {
-    if (value === undefined) return 0; 
+    if (value === undefined) return 0;
     return value / 100;
   }
 

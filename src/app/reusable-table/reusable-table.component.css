@@ -14,7 +14,7 @@
   .status-badge.complete {
     background-color: #2ecc71;
   }
-  
+
 
   .filter-buttons {
     margin-top: 1.6rem;
@@ -22,7 +22,7 @@
     display: flex;
     gap: 0.75rem;
   }
-  
+
   button {
     padding: 0.6rem 1.2rem;
     border: none;
@@ -33,12 +33,12 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, transform 0.2s;
   }
-  
+
   button:hover {
-    background: #f70776; 
+    background: #f70776;
     transform: translateY(-2px);
   }
-  
+
   table {
     width: 100%;
     border-collapse: collapse;
@@ -51,7 +51,7 @@
     margin-left: auto;
     background-color: #f6c391;
   }
-  
+
   th {
     background-color: #f8f9fa;
     color: #333;
@@ -60,21 +60,21 @@
     font-weight: 600;
     border-bottom: 2px solid #e0e0e0;
   }
-  
+
   td {
     padding: 0.5rem;
     background: #ece8d9;;
     border-bottom: 1px solid black;
   }
-  
+
   tr:last-child td {
     border-bottom: none;
   }
-  
+
   tr {
     border: 2px solid black;
   }
-  
+
   .status-badge {
     padding: 0.4rem 1rem;
     border-radius: 20px;
@@ -84,24 +84,164 @@
     display: inline-block;
     font-size: 0.85rem;
   }
-  
+
   .status-badge.error {
     background-color: #e74c3c;
   }
-  
+
   .status-badge.in-progress {
     background-color: #f1c40f;
     color: #000;
   }
-  
+
   .status-badge.complete {
     background-color: #2ecc71;
   }
-  
+
   .go-back a {
-    
+
     border: 2px solid burlywood;
     border-radius: 0.5rem;
     background-color: white;
-  
+
   }
+
+tr {
+  transition: background-color 0.3s ease;
+}
+
+tr:hover {
+  background-color: #333;
+  color: white;
+}
+
+
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.status-badge.error { background: #dc3545; color: white; }
+.status-badge.in-progress { background: #007bff; color: white; }
+.status-badge.complete { background: #28a745; color: white; }
+
+
+.reset-button {
+  padding: 8px 16px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.reset-button:hover {
+  background: #0056b3;
+}
+
+
+/*test*/
+
+
+
+   .table-container {
+     padding: 10px;
+   }
+
+.reset-button {
+  padding: 0.6rem 1.2rem;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f6c391; /* Match ModelComponent buttons */
+  color: #333;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.reset-button:hover {
+  background: #f70776; /* Match ModelComponent button hover */
+  transform: translateY(-2px);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid black;
+  margin-left: auto;
+  background-color: #f6c391;
+}
+
+th {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+td {
+  padding: 0.5rem;
+  background: #ece8d9;
+  border-bottom: 1px solid black;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr {
+  border: 2px solid black;
+  transition: background-color 0.3s ease;
+}
+
+tr:hover {
+  background-color: #333;
+  color: white;
+}
+
+tr:hover td {
+  background-color: transparent;
+  color: white;
+}
+
+.status-badge {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: inline-block;
+  font-size: 0.85rem;
+}
+
+.status-badge.error {
+  background-color: #e74c3c;
+}
+
+.status-badge.in-progress {
+  background-color: #f1c40f;
+  color: #000;
+}
+
+.status-badge.complete {
+  background-color: #2ecc71;
+}
+
+
+tr:hover .status-badge {
+  color: inherit;
+}
+
+tr:hover .status-badge.in-progress {
+  color: #000;
+}
+
