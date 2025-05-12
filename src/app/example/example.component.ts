@@ -4,7 +4,6 @@ import {MessageService} from "../message.service";
 import {CommonModule} from "@angular/common";
 import {DoublePipe} from "../double.pipe";
 import { Subscription } from 'rxjs';
-import {HighlightTextPipe} from "../highlight-text.pipe";
 import {RealTimePipe} from "../real-time.pipe";
 import { NgModule } from '@angular/core';
 

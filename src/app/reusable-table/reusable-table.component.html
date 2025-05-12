@@ -1,4 +1,5 @@
 <button class="reset-button" (click)="resetSelection()">Show All Rows</button>
+<div class="hover-text">Hovering : {{hoveredRow | firstColumnText:columns}}</div>
 <table>
     <thead>
       <tr>
@@ -6,7 +7,11 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let row of selectedRow ? [selectedRow] : data" (click)="selectRow(row)">
+        <tr *ngFor="let row of selectedRow ? [selectedRow] : data" 
+        (click)="selectRow(row)"
+        (mouseover)="setHoveredRow(row)"
+        (mouseout)="clearHoveredRow()"
+        >
         <td *ngFor="let col of columns">
           <span *ngIf="col.field === 'status'; else normalCell" [ngClass]="getStatusClass(row[col.field])">
             {{ row[col.field] }}

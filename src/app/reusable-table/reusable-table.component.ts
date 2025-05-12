@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormControl, FormControlName, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModelComponent } from '../model/model.component';
 import {ExampleComponent} from "../example/example.component";
+import { FirstColumnTextPipe } from '../first-column-text.pipe';
 
 
 @Component({
   selector: 'app-reusable-table',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, FirstColumnTextPipe],
   templateUrl: './reusable-table.component.html',
   styleUrl: './reusable-table.component.css'
 })
@@ -17,6 +18,7 @@ export class ReusableTableComponent {
   @Input() columns: { header: string, field: string }[] = [];
   @Output() reset = new EventEmitter<void>();
   selectedRow:any = null;
+  hoveredRow:any = null;
 
 
   getStatusClass(status: string): string {
@@ -39,6 +41,14 @@ export class ReusableTableComponent {
   resetSelection(){
     this.selectedRow = null;
     this.reset.emit();
+  }
+
+  setHoveredRow(row:any){
+    this.hoveredRow = row;
+  }
+
+  clearHoveredRow() {
+    this.hoveredRow = null;
   }
 
 }
